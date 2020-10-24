@@ -1,16 +1,16 @@
 package com.project.professorallocation.model;
 
-public class course {
+public class Course {
 
 	private Long id;
 	private String name;
 
-	public course() {
+	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public course(Long id, String name) {
+	public Course(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

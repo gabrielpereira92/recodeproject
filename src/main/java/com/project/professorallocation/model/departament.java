@@ -1,15 +1,15 @@
 package com.project.professorallocation.model;
 
-public class departament {
+public class Departament {
 
 	private Long id;
 	private String name;
 
-	public departament() {
+	public Departament() {
 		super();
 	}
 
-	public departament(Long id, String name) {
+	public Departament(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

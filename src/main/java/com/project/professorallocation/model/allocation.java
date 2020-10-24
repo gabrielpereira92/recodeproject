@@ -2,19 +2,19 @@ package com.project.professorallocation.model;
 
 import java.sql.Time;
 
-public class allocation {
+public class Allocation {
 
 	private Long id;
 	private String day;
 	private Time end;
 	private Time start;
 
-	public allocation() {
+	public Allocation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public allocation(Long id, String day, Time end, Time start) {
+	public Allocation(Long id, String day, Time end, Time start) {
 		super();
 		this.id = id;
 		this.day = day;

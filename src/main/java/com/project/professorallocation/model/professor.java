@@ -1,16 +1,16 @@
 package com.project.professorallocation.model;
 
-public class professor {
+public class Professor {
 
 	private Long id;
 	private String cpf;
 	private String name;
 
-	public professor() {
+	public Professor() {
 		super();
 	}
 
-	public professor(Long id, String cpf, String name) {
+	public Professor(Long id, String cpf, String name) {
 		super();
 		this.id = id;
 		this.cpf = cpf;

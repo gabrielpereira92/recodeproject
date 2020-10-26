@@ -2,11 +2,31 @@ package com.project.professorallocation.model;
 
 import java.sql.Time;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "allocation")
 public class Allocation {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Enumerated(value = EnumType.STRING)
+	@Column(name = "day", nullable = false)
 	private String day;
+	
+	@Column(name= "end", nullable = false, columnDefinition = "TIME")
 	private Time end;
+	
+	@Column(name= "start", nullable = false, columnDefinition = "TIME")
 	private Time start;
 
 	public Allocation() {

@@ -1,6 +1,7 @@
 package com.project.professorallocation.model;
 
 import java.sql.Time;
+import java.time.DayOfWeek;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ public class Allocation {
 	
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "day", nullable = false)
-	private String day;
+	private DayOfWeek day;
 	
 	@Column(name= "end", nullable = false, columnDefinition = "TIME")
 	private Time end;
@@ -34,7 +35,7 @@ public class Allocation {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Allocation(Long id, String day, Time end, Time start) {
+	public Allocation(Long id, DayOfWeek day, Time end, Time start) {
 		super();
 		this.id = id;
 		this.day = day;
@@ -50,11 +51,11 @@ public class Allocation {
 		this.id = id;
 	}
 
-	public String getDay() {
+	public DayOfWeek getDay() {
 		return day;
 	}
 
-	public void setDay(String day) {
+	public void setDay(DayOfWeek day) {
 		this.day = day;
 	}
 

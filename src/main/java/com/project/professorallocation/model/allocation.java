@@ -7,9 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,16 +21,38 @@ public class Allocation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Enumerated(value = EnumType.STRING)
 	@Column(name = "day", nullable = false)
 	private DayOfWeek day;
-	
-	@Column(name= "end", nullable = false, columnDefinition = "TIME")
+
+	@Column(name = "end", nullable = false, columnDefinition = "TIME")
 	private Time end;
-	
-	@Column(name= "start", nullable = false, columnDefinition = "TIME")
+
+	@Column(name = "start", nullable = false, columnDefinition = "TIME")
 	private Time start;
+
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	private Professor professor;
+
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	private Course course;
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
 
 	public Allocation() {
 		super();

@@ -58,9 +58,8 @@ public class ProfessorRepositoryTest {
 	public void initFindById() {
 		Optional<Professor> optionalProfessor = professorRepository.findById(2L);
 		Professor professor = optionalProfessor.orElse(null);
-		
+
 		System.out.println(professor);
-		
 
 	}
 

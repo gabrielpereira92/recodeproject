@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.project.professorallocation.model.Course;
 
 @Repository
-public interface CouserRepository extends JpaRepository<Course, Long> {
+public interface CourseRepository extends JpaRepository<Course, Long> {
 
 	List<Course> findByNameContainingIgnoreCase(String name);
 }

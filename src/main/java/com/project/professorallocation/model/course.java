@@ -60,4 +60,10 @@ public class Course {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", allocations=" + allocations + "]";
+	}
+
+	
 }

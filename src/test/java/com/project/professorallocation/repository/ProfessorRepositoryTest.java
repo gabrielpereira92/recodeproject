@@ -27,12 +27,30 @@ public class ProfessorRepositoryTest {
 	public void initSaveProfessor() {
 
 		Departament departament = new Departament();
-		departament.setId(1L);
+		departament.setId(2L);
 
 		Professor professor = new Professor();
 		professor.setId(null);
+		professor.setCpf("34562334712891");
+		professor.setName("Natanael");
+		professor.setDepartament(departament);
+
+		professor = professorRepository.save(professor);
+
+		System.out.println(professor);
+
+	}
+
+	@Test
+	public void initUpdateProfessor() {
+
+		Departament departament = new Departament();
+		departament.setId(1L);
+
+		Professor professor = new Professor();
+		professor.setId(3L);
 		professor.setCpf("345623347");
-		professor.setName("Telma");
+		professor.setName("Alarcon");
 		professor.setDepartament(departament);
 
 		professor = professorRepository.save(professor);
@@ -61,6 +79,17 @@ public class ProfessorRepositoryTest {
 
 		System.out.println(professor);
 
+	}
+
+	@Test
+	public void initDeleteByID() {
+		professorRepository.deleteById(4L);
+
+	}
+
+	@Test
+	public void initDeleteAll() {
+		professorRepository.deleteAll();
 	}
 
 }

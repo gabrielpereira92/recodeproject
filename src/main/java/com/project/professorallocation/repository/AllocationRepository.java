@@ -10,6 +10,5 @@ import com.project.professorallocation.model.Allocation;
 @Repository
 public interface AllocationRepository extends JpaRepository<Allocation, Long> {
 	List<Allocation> findByNameContainingIgnoreCase(String name);
-	
 
 }

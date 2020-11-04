@@ -40,7 +40,9 @@ public class AllocationRepositoryTest {
 		allocation.setDay(DayOfWeek.FRIDAY);
 		allocation.setStart(Time.valueOf("08:00:00"));
 		allocation.setEnd(Time.valueOf("12:00:00"));
-
+		allocation.setCourse(course);
+		allocation.setProfessor(professor);
+		
 		allocation = allocationRepository.save(allocation);
 
 		System.out.println(allocation);

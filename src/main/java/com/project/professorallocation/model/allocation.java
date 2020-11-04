@@ -22,7 +22,7 @@ public class Allocation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Enumerated(value = EnumType.STRING)
+	@Enumerated(EnumType.STRING)
 	@Column(name = "day", nullable = false)
 	private DayOfWeek day;
 

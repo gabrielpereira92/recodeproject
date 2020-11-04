@@ -6,9 +6,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.project.professorallocation.model.Allocation;
+import com.project.professorallocation.model.Course;
+import com.project.professorallocation.model.Professor;
 
 @Repository
 public interface AllocationRepository extends JpaRepository<Allocation, Long> {
-	List<Allocation> findByNameContainingIgnoreCase(String name);
+
+	List<Allocation> findByProfessor(Professor professor);
+	
+	List<Allocation> findByCourse(Course course);
+	
 
 }

@@ -27,7 +27,7 @@ public class ProfessorRepositoryTest {
 	public void initSaveProfessor() {
 
 		Departament departament = new Departament();
-		departament.setId(2L);
+		departament.setId(1L);
 
 		Professor professor = new Professor();
 		professor.setId(null);

@@ -13,7 +13,6 @@ import org.springframework.test.context.TestPropertySource;
 
 import com.project.professorallocation.model.Departament;
 
-
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
@@ -25,13 +24,12 @@ public class DepartamentRepositoryTest {
 	private DepartamentRepository departamentRepository;
 
 	@Test
-	public void initSaveDepartament() {
+	public void initSaveDepartamentTest() {
 
 		Departament departament = new Departament();
 		departament.setId(null);
 		departament.setName("Matemática");
 
-		
 		departament = departamentRepository.save(departament);
 
 		System.out.println(departament);
@@ -39,7 +37,7 @@ public class DepartamentRepositoryTest {
 	}
 
 	@Test
-	public void initUpdateDepartament() {
+	public void initUpdateDepartamentTest() {
 
 		Departament departament = new Departament();
 		departament.setId(2L);
@@ -52,20 +50,20 @@ public class DepartamentRepositoryTest {
 	}
 
 	@Test
-	public void initFindAll() {
+	public void initFindAllTest() {
 		List<Departament> list = departamentRepository.findAll();
 
 		System.out.println("Lista Departamentos");
 		for (Departament departament : list) {
 			System.out.println(departament);
 			System.out.println("====================================================");
-		
+
 		}
 
 	}
 
 	@Test
-	public void initFindById() {
+	public void initFindByIdTest() {
 		Optional<Departament> optionalDepartament = departamentRepository.findById(2L);
 		Departament departament = optionalDepartament.orElse(null);
 
@@ -74,7 +72,18 @@ public class DepartamentRepositoryTest {
 	}
 
 	@Test
-	public void initDeleteByID() {
+	public void initFindByNameTest() {
+		String name = "mate";
+		List<Departament> departaments = departamentRepository.findByNameContainingIgnoreCase(name);
+
+		for (Departament departament : departaments) {
+			System.out.println(departament);
+		}
+
+	}
+
+	@Test
+	public void initDeleteByIDTest() {
 		departamentRepository.deleteById(4L);
 
 	}

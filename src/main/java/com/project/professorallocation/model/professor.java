@@ -84,8 +84,7 @@ public class Professor {
 
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", cpf=" + cpf + ", name=" + name + ", departament=" + departament
-				+ ", allocations=" + allocations + "]";
+		return "Professor [id=" + id + ", cpf=" + cpf + ", name=" + name + "]";
 	}
 
 	

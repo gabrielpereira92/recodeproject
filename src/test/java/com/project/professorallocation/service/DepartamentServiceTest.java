@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
 import com.project.professorallocation.model.Departament;
-import com.sun.el.stream.Optional;
 
 @SpringBootTest
 @TestPropertySource(locations = "classpath:application.properties")
@@ -66,16 +65,16 @@ public class DepartamentServiceTest {
 
 		departamentService.initUpdateDepartament(departament);
 	}
-	
+
 	@Test
 	public void initDeleteByIDTest() {
 		Long id = 2L;
 		departamentService.initDeleteByID(id);
 	}
+
 	@Test
 	public void initDeleteAllTest() {
 		departamentService.initDeleteAll();
 	}
 
-	
 }

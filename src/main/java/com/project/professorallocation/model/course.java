@@ -62,7 +62,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", allocations=" + allocations + "]";
+		return "Course [id=" + id + ", name=" + name;
 	}
 
 	

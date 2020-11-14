@@ -13,28 +13,27 @@ import com.project.professorallocation.model.Professor;
 @SpringBootTest
 @TestPropertySource(locations = "classpath:application.properties")
 public class ProfessorServiceTest {
-	
+
 	@Autowired
 	ProfessorService professorService;
-	
+
 	@Test
 	public void initSaveProfessorTest() {
 		Departament departament = new Departament();
 		departament.setId(5L);
-		
-		Professor professor = new Professor();
-		professor.setName("Sérgio");
-		professor.setCpf("901290105189");
-		professor.setDepartament(departament);
-		
-		professorService.initSaveProfessor(professor);
-		
-	}
 
+		Professor professor = new Professor();
+		professor.setName("Danilo");
+		professor.setCpf("90129011205189");
+		professor.setDepartament(departament);
+
+		professorService.initSaveProfessor(professor);
+
+	}
 
 	@Test
 	public void initUpdateProfessorTest() {
-		
+
 		Departament departament = new Departament();
 		departament.setId(4L);
 
@@ -43,7 +42,7 @@ public class ProfessorServiceTest {
 		professor.setCpf("1298219");
 		professor.setName("Danilo");
 		professor.setDepartament(departament);
-		 
+
 		professor = professorService.initUpdateProfessor(professor);
 		System.out.println(professor);
 
@@ -54,7 +53,7 @@ public class ProfessorServiceTest {
 		List<Professor> list = professorService.initFindAll();
 
 		System.out.println("Lista Professores");
-		
+
 		for (Professor professor : list) {
 			System.out.println(professor);
 			System.out.println("====================================================");
@@ -63,9 +62,8 @@ public class ProfessorServiceTest {
 
 	@Test
 	public void initFindByIdTest() {
-	Professor professor = professorService.initFindById(2L);
-	System.out.println(professor);
-		
+		Professor professor = professorService.initFindById(2L);
+		System.out.println(professor);
 
 	}
 
@@ -89,10 +87,5 @@ public class ProfessorServiceTest {
 	public void initDeleteAll() {
 		professorService.initDeleteAll();
 	}
-
-
-	
-	
-	
 
 }

@@ -30,8 +30,8 @@ public class AllocationServiceTest {
 
 		Allocation allocation = new Allocation();
 		allocation.setDay(DayOfWeek.MONDAY);
-		allocation.setStart(Time.valueOf("10:00:00"));
-		allocation.setEnd(Time.valueOf("12:00:00"));
+		allocation.setStart(Time.valueOf("01:00:00"));
+		allocation.setEnd(Time.valueOf("02:00:00"));
 		allocation.setCourse(course);
 		allocation.setProfessor(professor);
 
@@ -77,6 +77,24 @@ public class AllocationServiceTest {
 		Allocation allocation = allocationService.initFindById(2L);
 		System.out.println(allocation);
 
+	}
+	
+	@Test
+	public void initFindByProfessor() {
+		Long id = 2L;
+		
+		List<Allocation> allocations = allocationService.initFindByProfessor(id);
+		
+		allocations.forEach(System.out::println);
+		
+	}
+	
+	@Test
+	public void initFindByCourseTest() {
+		Long id = 2L;
+		List<Allocation> allocations = allocationService.initFindByCourse(id);
+		allocations.forEach(System.out::println);
+				
 	}
 
 	@Test
